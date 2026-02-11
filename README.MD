@@ -1,6 +1,6 @@
 # StoneCraft Masonry – Multi-Page Business Website
 
-Live Demo (GitHub Pages): https://YOUR-USERNAME.github.io/stonecraft-masonry/
+Live Demo (GitHub Pages):https://dino-hub-design.github.io/StoneCraft-Masonry/
 
 A clean, modern, mobile-responsive website built for a local masonry business.  
 This project is designed as a real client-style portfolio piece for freelance work.
