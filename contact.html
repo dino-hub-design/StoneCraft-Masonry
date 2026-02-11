@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact | StoneCraft Masonry</title>
+  <meta name="description" content="Contact StoneCraft Masonry for a free estimate. Share photos and measurements for faster pricing." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="logo" aria-hidden="true"></span>
+      <span>StoneCraft Masonry</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a data-nav href="index.html">Home</a>
+      <a data-nav href="about.html">About</a>
+      <a data-nav href="services.html">Services</a>
+      <a data-nav href="gallery.html">Gallery</a>
+      <a data-nav href="contact.html">Contact</a>
+    </nav>
+
+    <div class="nav-cta">
+      <a class="btn ghost" href="tel:+10000000000">Call Now</a>
+      <a class="btn primary" href="contact.html">Get a Free Quote</a>
+      <button class="menu-btn" data-menu-btn aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="container mobile-panel" data-mobile-panel>
+    <a data-nav href="index.html">Home</a>
+    <a data-nav href="about.html">About</a>
+    <a data-nav href="services.html">Services</a>
+    <a data-nav href="gallery.html">Gallery</a>
+    <a data-nav href="contact.html">Contact</a>
+    <div class="row">
+      <a class="btn ghost" href="tel:+10000000000">Call</a>
+      <a class="btn primary" href="contact.html">Quote</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page-title">
+    <div class="container">
+      <span class="badge">📩 Contact</span>
+      <h1>Get a free estimate</h1>
+      <p>Send details and photos — we’ll reply quickly with questions and a clear quote.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div class="panel">
+        <h2 style="margin:0">Message us</h2>
+        <p>For fastest pricing, include: photos, rough measurements, and your timeline.</p>
+
+        <form class="form" data-contact-form style="margin-top:12px">
+          <input class="input" type="text" name="name" placeholder="Your name" required />
+          <input class="input" type="email" name="email" placeholder="Email" required />
+          <input class="input" type="text" name="phone" placeholder="Phone (optional)" />
+          <input class="input" type="text" name="location" placeholder="Location / City" required />
+          <textarea class="input" name="message" placeholder="Describe the project (materials, size, timeline)..." required></textarea>
+          <button class="btn primary" type="submit">Send Message</button>
+          <div class="small">Demo form. We can connect a real form backend later.</div>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h2 style="margin:0">Contact details</h2>
+        <p class="small">Replace with real details when you use this as a portfolio piece.</p>
+
+        <div style="margin-top:12px" class="badge">📞 Phone: +1 (000) 000-0000</div>
+        <div style="margin-top:10px" class="badge">✉️ Email: hello@example.com</div>
+        <div style="margin-top:10px" class="badge">📍 Service area: Citywide + nearby</div>
+
+        <div style="margin-top:16px">
+          <h3 style="margin:0 0 8px">What happens next?</h3>
+          <ol style="margin:0; color:var(--muted); padding-left:18px">
+            <li>We review photos and measurements</li>
+            <li>We confirm scope + materials</li>
+            <li>We send a clear price + timeline</li>
+          </ol>
+        </div>
+
+        <div style="margin-top:16px" class="hero-actions">
+          <a class="btn" href="tel:+10000000000">Call Now</a>
+          <a class="btn" href="services.html">Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="brand"><span class="logo"></span><span>StoneCraft Masonry</span></div>
+      <p class="small">Brick • Block • Stone • Repairs. Clean work, strong results.</p>
+      <div class="footer-links small">
+        <a href="tel:+10000000000">Phone</a>
+        <a href="mailto:hello@example.com">Email</a>
+        <a href="contact.html">Quote</a>
+      </div>
+    </div>
+    <div class="small">
+      <b style="color:var(--text)">Service Areas</b><br/>
+      Citywide + surrounding areas<br/><br/>
+      <span>© <span id="y"></span> StoneCraft Masonry</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
