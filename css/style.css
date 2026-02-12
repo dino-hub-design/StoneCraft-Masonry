@@ -366,3 +366,8 @@ textarea.input{min-height:120px; resize:vertical}
 @media (max-width: 768px){
   .gallery .tile{height:280px}
 }
+.tile{
+  text-decoration:none;
+  color:inherit;
+  display:block;
+}
