@@ -376,7 +376,7 @@ textarea.input{min-height:120px; resize:vertical}
 .lightbox{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.9);
+  background:rgba(0,0,0,.95);
   display:none;
   align-items:center;
   justify-content:center;
@@ -390,15 +390,25 @@ textarea.input{min-height:120px; resize:vertical}
 .lightbox-img{
   max-width:90%;
   max-height:85%;
-  border-radius:12px;
-  box-shadow:0 20px 50px rgba(0,0,0,.7);
+  border-radius:14px;
+  box-shadow:0 25px 60px rgba(0,0,0,.8);
 }
 
+/* BIG CLEAN CLOSE BUTTON */
 .close-lightbox{
   position:absolute;
-  top:30px;
-  right:40px;
-  font-size:40px;
-  color:#fff;
+  top:25px;
+  right:35px;
+  font-size:48px;
+  font-weight:300;
+  color:#ffffff;
   cursor:pointer;
+  z-index:10000;
+  transition: transform .2s ease, opacity .2s ease;
 }
+
+.close-lightbox:hover{
+  transform: scale(1.2);
+  opacity:.8;
+}
+
