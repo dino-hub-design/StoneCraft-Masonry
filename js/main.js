@@ -35,4 +35,30 @@ document.addEventListener("DOMContentLoaded", () => {
       contactForm.reset();
     });
   }
+  // Lightbox for gallery
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.querySelector(".lightbox-img");
+const closeBtn = document.querySelector(".close-lightbox");
+
+if (lightbox && lightboxImg && closeBtn) {
+
+  document.querySelectorAll(".gallery a.tile").forEach(tile => {
+    tile.addEventListener("click", function(e){
+      e.preventDefault();
+      lightbox.classList.add("active");
+      lightboxImg.src = this.getAttribute("href");
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    lightbox.classList.remove("active");
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if(e.target === lightbox){
+      lightbox.classList.remove("active");
+    }
+  });
+}
+
 });
