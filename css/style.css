@@ -16,21 +16,23 @@ html{scroll-behavior:smooth}
 body{
   margin:0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: radial-gradient(1200px 600px at 20% 0%, rgba(102,217,255,.12), transparent 55%),
-              radial-gradient(900px 500px at 90% 0%, rgba(255,184,77,.12), transparent 55%),
-              var(--bg);
+  background:
+    radial-gradient(1200px 600px at 20% 0%, rgba(102,217,255,.12), transparent 55%),
+    radial-gradient(900px 500px at 90% 0%, rgba(255,184,77,.12), transparent 55%),
+    var(--bg);
   color:var(--text);
   line-height:1.5;
 }
 
 a{color:inherit; text-decoration:none}
 img{max-width:100%; display:block}
-
 .container{max-width:var(--max); margin:0 auto; padding:0 18px}
 
+/* Buttons */
 .btn{
   display:inline-flex;
   align-items:center;
+  justify-content:center;
   gap:.6rem;
   padding:12px 16px;
   border-radius:999px;
@@ -39,7 +41,8 @@ img{max-width:100%; display:block}
   color:var(--text);
   box-shadow: 0 6px 18px rgba(0,0,0,.22);
   cursor:pointer;
-  font-weight:600;
+  font-weight:700;
+  transition: transform .2s ease, background .2s ease, filter .2s ease;
 }
 .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.10)}
 .btn.primary{
@@ -47,8 +50,10 @@ img{max-width:100%; display:block}
   border:none;
   color:#1a1206;
 }
-.btn.primary:hover{filter:brightness(1.02)}
+.btn.primary:hover{filter:brightness(1.03)}
 .btn.ghost{background:transparent}
+
+/* Badge */
 .badge{
   display:inline-flex;
   gap:.5rem;
@@ -61,6 +66,7 @@ img{max-width:100%; display:block}
   font-size:.92rem;
 }
 
+/* Header/Nav */
 header{
   position:sticky;
   top:0;
@@ -79,12 +85,18 @@ header{
   display:flex;
   align-items:center;
   gap:.75rem;
-  font-weight:800;
+  font-weight:900;
   letter-spacing:.3px;
 }
 .logo{
   width:38px;height:38px;border-radius:12px;
   background: linear-gradient(135deg, rgba(102,217,255,.9), rgba(255,184,77,.9));
+  box-shadow: var(--shadow);
+}
+.logo-img{
+  height:38px;
+  width:auto;
+  border-radius:12px;
   box-shadow: var(--shadow);
 }
 
@@ -95,15 +107,21 @@ header{
 }
 .nav-links a{
   color:var(--muted);
-  font-weight:600;
+  font-weight:700;
   padding:10px 10px;
   border-radius:10px;
+  transition: background .2s ease, color .2s ease;
 }
 .nav-links a:hover{color:var(--text); background:rgba(255,255,255,.06)}
-.nav-links a.active{color:var(--text); background:rgba(255,255,255,.08); border:1px solid var(--border)}
+.nav-links a.active{
+  color:var(--text);
+  background:rgba(255,255,255,.08);
+  border:1px solid var(--border);
+}
 
 .nav-cta{display:flex; gap:10px; align-items:center}
 
+/* Mobile menu button */
 .menu-btn{
   display:none;
   width:44px; height:44px;
@@ -121,6 +139,7 @@ header{
   border-radius:2px;
 }
 
+/* Mobile panel */
 .mobile-panel{
   display:none;
   border-top:1px solid var(--border);
@@ -131,14 +150,13 @@ header{
   padding:12px 12px;
   border-radius:12px;
   color:var(--muted);
-  font-weight:700;
+  font-weight:800;
 }
 .mobile-panel a:hover{background:rgba(255,255,255,.06); color:var(--text)}
 .mobile-panel .row{display:flex; gap:10px; padding:12px 12px}
 
-.hero{
-  padding:54px 0 26px;
-}
+/* Hero */
+.hero{padding:54px 0 26px}
 .hero-grid{
   display:grid;
   grid-template-columns: 1.2fr .8fr;
@@ -162,11 +180,10 @@ header{
   box-shadow: var(--shadow);
   padding:18px;
 }
-.hero-card .meta{
-  display:flex; gap:10px; flex-wrap:wrap;
-}
+.hero-card .meta{display:flex; gap:10px; flex-wrap:wrap}
 .hero-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
 
+/* KPI */
 .kpi{
   display:grid;
   grid-template-columns: repeat(2,1fr);
@@ -179,9 +196,10 @@ header{
   border-radius:16px;
   padding:12px;
 }
-.kpi .num{font-size:1.35rem; font-weight:800}
+.kpi .num{font-size:1.35rem; font-weight:900}
 .kpi .lbl{color:var(--muted); font-size:.95rem}
 
+/* Sections */
 .section{padding:34px 0}
 .section-head{
   display:flex;
@@ -193,6 +211,7 @@ header{
 .section h2{margin:0; font-size:1.6rem}
 .section .sub{color:var(--muted); margin:6px 0 0}
 
+/* Cards grid */
 .grid-3{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
@@ -215,6 +234,7 @@ header{
 }
 .icon svg{width:22px;height:22px}
 
+/* Split / Panels */
 .split{
   display:grid;
   grid-template-columns: 1fr 1fr;
@@ -229,47 +249,69 @@ header{
 }
 .panel p{color:var(--muted); margin:8px 0 0}
 
+/* =============================== */
+/* NEW GALLERY (BIG PHOTOS)        */
+/* =============================== */
 .gallery{
   display:grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap:12px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap:28px;
+  margin-top:22px;
 }
-.tile{
-  border-radius:18px;
-  border:1px solid var(--border);
-  overflow:hidden;
-  background:rgba(255,255,255,.04);
+
+.gallery .tile{
   position:relative;
-  min-height:180px;
-}
-.tile::before{
-  content:"";
-  position:absolute; inset:0;
-  background:
-    linear-gradient(135deg, rgba(102,217,255,.10), transparent 55%),
-    linear-gradient(225deg, rgba(255,184,77,.10), transparent 55%);
-}
-.tile .cap{
-  position:absolute; left:14px; bottom:12px; right:14px;
-  padding:10px 12px;
-  border-radius:14px;
+  height:360px;
+  border-radius:22px;
+  overflow:hidden;
   border:1px solid var(--border);
-  background:rgba(11,15,20,.55);
-  backdrop-filter: blur(10px);
+  background:#111;
+  box-shadow: 0 18px 40px rgba(0,0,0,.45);
+  transition: transform .35s ease, box-shadow .35s ease;
 }
-.tile .cap b{display:block}
-.tile .cap span{color:var(--muted); font-size:.95rem}
 
-.tile.s1{grid-column: span 7}
-.tile.s2{grid-column: span 5}
-.tile.s3{grid-column: span 4}
-.tile.s4{grid-column: span 4}
-.tile.s5{grid-column: span 4}
-
-.form{
-  display:grid;
-  gap:10px;
+.gallery .tile:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0,0,0,.6);
 }
+
+.gallery .tile img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition: transform .6s ease;
+}
+
+.gallery .tile:hover img{
+  transform: scale(1.08);
+}
+
+.gallery .tile .cap{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  padding:22px;
+  background: linear-gradient(to top, rgba(0,0,0,.86), rgba(0,0,0,.35), transparent);
+  color:#fff;
+}
+
+.gallery .tile .cap b{
+  display:block;
+  font-size:1.2rem;
+  margin-bottom:6px;
+  letter-spacing:.3px;
+}
+
+.gallery .tile .cap span{
+  display:block;
+  font-size:.95rem;
+  opacity:.9;
+}
+
+/* Forms */
+.form{display:grid; gap:10px}
 .input{
   width:100%;
   padding:12px 12px;
@@ -281,6 +323,12 @@ header{
 }
 textarea.input{min-height:120px; resize:vertical}
 
+/* Page title */
+.page-title{padding:30px 0 10px}
+.page-title h1{margin:0; font-size:2rem}
+.page-title p{margin:8px 0 0; color:var(--muted)}
+
+/* Footer */
 .footer{
   border-top:1px solid var(--border);
   padding:22px 0;
@@ -297,60 +345,24 @@ textarea.input{min-height:120px; resize:vertical}
 .footer a:hover{color:var(--text)}
 .footer-links{display:flex; gap:14px; flex-wrap:wrap}
 
-.page-title{
-  padding:30px 0 10px;
+.made-by{
+  margin-top:8px;
+  opacity:.75;
+  font-size:.88rem;
 }
-.page-title h1{margin:0; font-size:2rem}
-.page-title p{margin:8px 0 0; color:var(--muted)}
+.made-by:hover{opacity:1}
 
+/* Responsive */
 @media (max-width: 900px){
   .hero-grid{grid-template-columns: 1fr}
   .grid-3{grid-template-columns: 1fr}
   .split{grid-template-columns: 1fr}
-  .tile.s1,.tile.s2,.tile.s3,.tile.s4,.tile.s5{grid-column: span 12}
+
   .nav-links, .nav-cta .ghost{display:none}
   .menu-btn{display:block}
-  .mobile-panel{display:none}
   .footer-grid{grid-template-columns:1fr}
 }
-/* === Gallery fix for <img> tiles === */
-.gallery .tile{
-  position: relative;
-  overflow: hidden;
-  border-radius: 18px;
-  padding: 0 !important;         /* kill old padding */
-  display: block !important;     /* kill old flex rules */
-  min-height: 240px;             /* controls tile height */
-}
 
-.gallery .tile img{
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transform: scale(1.01);        /* tiny scale to avoid edge gaps */
-}
-
-.gallery .tile .cap{
-  position: absolute;
-  left: 12px;
-  right: 12px;
-  bottom: 12px;
-  padding: 10px 12px;
-  border-radius: 14px;
-  background: rgba(10, 12, 16, 0.62);
-  backdrop-filter: blur(10px);
-}
-
-.gallery .tile .cap b{
-  display: block;
-  color: #fff;
-  margin-bottom: 4px;
-}
-
-.gallery .tile .cap span{
-  display: block;
-  opacity: 0.9;
+@media (max-width: 768px){
+  .gallery .tile{height:280px}
 }
